@@ -9,5 +9,8 @@ export default {
 		extend: {}
 	},
 
-	plugins: [typography, forms]
+	plugins: [
+		require('daisyui'),
+		typography,
+		forms]
 };
