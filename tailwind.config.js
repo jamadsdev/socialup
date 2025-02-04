@@ -9,8 +9,8 @@ export default {
 		extend: {}
 	},
 
-	plugins: [
-		require('daisyui'),
-		typography,
-		forms]
+	plugins: [typography, forms, require('daisyui')],
+	daisyui: {
+		themes: ["light", "dark", "dim", "night", "aqua"]
+	}
 };
