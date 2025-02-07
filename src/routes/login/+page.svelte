@@ -40,9 +40,9 @@
                 </svg>
                 <input type="password" id="password" name="password" class="input grow focus:border-0" placeholder="Password" />
             </label>
-            <button class="btn btn-sm btn-link block ml-auto mt-2" formnovalidate formaction="login?/reset">Reset Password</button>
+            <!-- <button class="btn btn-sm btn-link block ml-auto mt-2" formnovalidate formaction="login?/reset">Reset Password</button> -->
             <button class="btn btn-primary w-full mt-4" type="submit">Login</button>
-            <button class="btn btn-accent w-full mt-4 mb-2" type="submit" formaction="/login?/register">Register</button>
+            <!-- <button class="btn btn-accent w-full mt-4 mb-2" type="submit" formaction="/login?/register">Register</button> -->
         </form>
     </div>
 </LayoutContent>

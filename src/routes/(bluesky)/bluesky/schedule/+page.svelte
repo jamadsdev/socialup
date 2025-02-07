@@ -14,9 +14,6 @@
 
     const today = new Date(new Date().toString().split('GMT')[0]+' UTC').toISOString().split('.')[0];
     let selectedDate = $state()
-
-    
-
 </script>
 
 <div class="pt-4">
@@ -28,7 +25,6 @@
     <div class="grid grid-cols-2">
         <section>
             <!-- Post Creation Section -->
-            Post Creation
             <div class="grid grid-cols-2 gap-2 w-48">
                 <div>
                     {totalChars}/300
@@ -51,7 +47,6 @@
         </section>
         <section>
             <!-- Post Preview Section -->
-             Post Preview
              <div class="pt-8">
                 <!-- <textarea class="text-white bg-base-200 focus:border-secondary rounded-lg border-4 border-secondary" disabled id="newPost" wrap="hard" name="newPost" maxlength="300" cols="40" bind:value={chars}></textarea> -->
                 <div class="card bg-base-100 w-96 shadow-xl card-bordered">

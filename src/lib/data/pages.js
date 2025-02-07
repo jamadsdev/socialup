@@ -14,11 +14,6 @@ export const pages = [
         name: 'Getting Started',
         tags: '',
         href: '/docs/gettingstarted'
-      },
-      {
-        name: 'Bluesky',
-        tags: '',
-        href: '/docs/bluesky'
       }
       // {
       //   name: 'Instagram',

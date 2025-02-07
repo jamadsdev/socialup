@@ -23,15 +23,19 @@
             </ul>
         </div>
       </div>
+       <div class="px-2">
       {#if user}
-      <div class="px-2">
         <a href="/settings">
           <button class="btn btn-ghost justify-start font-semibold text-xl w-full">
             <Icon name="settings" />Settings
           </button>
         </a>
-      </div>
+       {:else}
+        <a href="/register">
+          <button class="btn btn-accent btn-md w-full">Sign Up</button>
+        </a> 
       {/if}
+    </div>
       <div class="px-2 py-4">
         {#if !user}
           <a href="/login">

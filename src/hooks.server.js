@@ -7,7 +7,7 @@ export const authentication = async ({ event, resolve }) => {
     event.locals.pb = PB;
 
     const cookie = event.request.headers.get('cookie');
-
+    console.log('Cookie', cookie)
     event.locals.pb.authStore.loadFromCookie(cookie || '');
 
     try {
@@ -28,18 +28,19 @@ export const authentication = async ({ event, resolve }) => {
             secure: SITE_ENV === 'production',
             sameSite: 'lax',
             path: '/',
-            maxAge: 60 * 60 * 24
+            maxAge: 60 * 60 * 6
         })
     );
 
     return response;
 }
 
-const unprotectedPrefix = ['/login', '/', '/docs']
+const unprotectedPrefix = ['/login','/docs','/register']
 export const authorization = async ({ event, resolve }) => {
     // Protect any routes under /authenticated
     if (!unprotectedPrefix.some((path) => event.url.pathname.startsWith(path)) && event.url.pathname !== '/') {
-        const loggedIn = await event.locals.pb.authStore;
+        const loggedIn = await event.locals.pb.authStore.baseToken;
+
         if (!loggedIn) {
             throw redirect(303, '/login');
         }
