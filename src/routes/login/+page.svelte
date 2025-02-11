@@ -1,5 +1,8 @@
 <script>
-	import LayoutContent from '$lib/layouts/LayoutContent.svelte';
+	import { browser } from '$app/environment';
+	import { invalidateAll } from '$app/navigation';
+
+    import LayoutContent from '$lib/layouts/LayoutContent.svelte';
     import { getAlertState } from '$lib/states/alert.svelte';
 
     /** @type {{ data: import('./$types').PageData }} */
@@ -8,6 +11,10 @@
 
     if (form?.fail) {
         alertState.error(form.message)
+    }
+
+    if (browser) {
+        invalidateAll()
     }
 </script>
 

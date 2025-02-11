@@ -7,7 +7,6 @@ export const authentication = async ({ event, resolve }) => {
     event.locals.pb = PB;
 
     const cookie = event.request.headers.get('cookie');
-    console.log('Cookie', cookie)
     event.locals.pb.authStore.loadFromCookie(cookie || '');
 
     try {
