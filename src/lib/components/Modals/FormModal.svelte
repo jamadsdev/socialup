@@ -19,7 +19,7 @@
 >
     <div class="modal-box">
         <div class="text-lg font-bold">{@render header?.()}</div>
-		<form action={formAction} method="POST" use:enhance>
+		<form action={formAction} method="POST">
 			{@render children?.()}
 			<!-- svelte-ignore a11y_autofocus -->
 			<div class="modal-action">

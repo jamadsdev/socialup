@@ -1,0 +1,16 @@
+{
+    "client_id": "https://5271-217-180-219-117.ngrok-free.app/client-metadata.json",
+    "client_name": "SocialUp",
+    "client_uri": "https://5271-217-180-219-117.ngrok-free.app",
+    "application_type": "web",
+    "grant_types": ["authorization_code", "refresh_token"],
+    "response_types": ["code"],
+    "token_endpoint_auth_method": "private_key_jwt",
+    "token_endpoint_auth_signing_alg": "ES256",
+    "scope": "atproto",
+    "redirect_uris": [
+      "https://5271-217-180-219-117.ngrok-free.app/auth/callback"
+    ],
+    "dpop_bound_access_tokens": true,
+    "jwks_uri": "https://5271-217-180-219-117.ngrok-free.app/jwks.json"
+  }

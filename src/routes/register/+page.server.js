@@ -7,6 +7,7 @@ export async function load() {
 
 export const actions = {
     register: async ({ locals, request }) => {
+        console.log('Entering Register Action...')
         const body = await request.formData();
         const email = body.get('email');
         const password = body.get('password');
@@ -23,6 +24,7 @@ export const actions = {
         }
 
         try {
+            console.log('Entering try block...')
             await locals.pb.collection('socialup_users').create(data);
             await locals.pb.collection('socialup_users').authWithPassword(data.email, data.password);
         } catch (error) {

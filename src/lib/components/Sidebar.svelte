@@ -30,10 +30,10 @@
             <Icon name="settings" />Settings
           </button>
         </a>
-       {:else}
+       <!-- {:else}
         <a href="/register">
           <button class="btn btn-accent btn-md w-full">Sign Up</button>
-        </a> 
+        </a>  -->
       {/if}
     </div>
       <div class="px-2 py-4">

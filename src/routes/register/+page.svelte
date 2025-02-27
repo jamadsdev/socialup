@@ -18,15 +18,15 @@
             <div class="grid grid-rows-4">
                 <label class="input input-bordered flex items-center gap-2">
                 Email
-                <input type="text" class="input grow focus:border-0" placeholder="iro@keywork.com" />
+                <input type="text" id="email" name="email" class="input grow focus:border-0" placeholder="iro@keywork.com" />
                 </label>
                 <label class="input input-bordered flex items-center gap-2">
                 Password
-                <input type="password" class="input grow focus:border-0" />
+                <input type="password" id="password" name="password" class="input grow focus:border-0" />
                 </label>
                 <label class="input input-bordered flex items-center gap-2">
                 Confirm
-                <input type="password" class="input grow focus:border-0" />
+                <input type="password" id="passwordVerify" name="passwordVerify" class="input grow focus:border-0" />
                 </label>
                 <button class="btn btn-accent w-full mt-4" type="submit">Register</button>
             </div>

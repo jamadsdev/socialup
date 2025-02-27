@@ -1,4 +1,5 @@
 import { fail } from '@sveltejs/kit';
+import { createJWT } from '$lib/utils';
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({locals}) {
@@ -25,6 +26,18 @@ export async function load({locals}) {
 };
 
 export const actions = {
+    delKey: async ({locals, request}) => {
+        const data = await request.formData();
+        const id = data.get('id')
+
+        try {
+            await locals.pb.collection('socialup_keys').delete(id);
+        } catch (error) {
+            return fail(500, {fail: true, message: error.data.message})
+        }
+
+        return {success: true, message: "API key successfully removed"}
+    },
     addKey: async ({ locals, request }) => {
         console.log('Entering Add Key Action...')
         const data = await request.formData();
@@ -36,10 +49,12 @@ export const actions = {
         }
 
         try {
+            const JwtKey = createJWT(key);
+
             await locals.pb.collection('socialup_keys').create({
                 userId: locals.user.id,
                 accountName,
-                key,
+                key: JwtKey,
                 service: "bluesky"
             })
         } catch (error) {
